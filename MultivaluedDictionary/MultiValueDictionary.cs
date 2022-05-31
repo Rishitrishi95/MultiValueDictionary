@@ -21,7 +21,7 @@ namespace MultivaluedDictionary
             if(multiValueDictionaryObject.ContainsKey(key))
             {
 
-                if (multiValueDictionaryObject[key].Contains(value))
+                if (multiValueDictionaryObject[key].Contains(value,StringComparer.OrdinalIgnoreCase))
                 {
                     return $"Error, Member {value} already exists in Key {key}\n";
                 }
@@ -94,7 +94,7 @@ namespace MultivaluedDictionary
         /*checks if key value pair exists*/
         public bool MemberExists(string key, string value)
         {
-            if (multiValueDictionaryObject.ContainsKey(key) && multiValueDictionaryObject[key].Contains(value))
+            if (multiValueDictionaryObject.ContainsKey(key) && multiValueDictionaryObject[key].Contains(value,StringComparer.OrdinalIgnoreCase))
             {
                 return true;
             }

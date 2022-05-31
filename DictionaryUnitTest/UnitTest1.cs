@@ -65,25 +65,29 @@ public class Tests
         var response = multiValueDict.Remove("zoo", "baz");
         Assert.That(response, Is.EqualTo($"Key - {key} doesn't exist, Removal unsuccessfull\n"));
     }
-    //[Test]
-    //public void TestRemoveAll()
-    //{
-    //    string key = "foo";
-    //    string value = "bar";
-    //    multiValueDict.Add("foo", "bar");
-    //    var response = multiValueDict.Add("foo", "bar");
-    //    Assert.That($"Error, Member {value} already exists in Key {key}", Is.EqualTo(response));
-    //}
 
-    //[Test]
-    //public void TestRemoveAllFail()
-    //{
-    //    string key = "foo";
-    //    string value = "bar";
-    //    multiValueDict.Add("foo", "bar");
-    //    var response = multiValueDict.Add("foo", "bar");
-    //    Assert.That($"Error, Member {value} already exists in Key {key}", Is.EqualTo(response));
-    //}
+    [Test]
+    public void TestRemoveAll()
+    {
+        multiValueDict.Add("foo", "bar");
+        multiValueDict.Add("foo", "baz");
+        multiValueDict.Add("foo", "zam");
+        if(multiValueDict.Count()==3)
+        {
+            multiValueDict.Remove("foo");
+            var response = multiValueDict.KeyExists("foo");
+            Assert.That(response, Is.EqualTo(false));
+        }
+    }
+
+    [Test]
+    public void TestRemoveAllFail()
+    {
+        string key = "zoo";
+        multiValueDict.Add("foo", "bar");
+        var response = multiValueDict.Remove("zoo");
+        Assert.That(response, Is.EqualTo($"Key {key} doesn't exist, Removal unsuccessfull\n"));
+    }
 
     //[Test]
     //public void TestMemberExists()

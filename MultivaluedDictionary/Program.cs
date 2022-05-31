@@ -4,7 +4,7 @@ namespace MultivaluedDictionary
 {
     class Program
     {
-        public static MultiValueDictionary multiValueDict = new MultiValueDictionary();
+        public static MultiValueDictionary multiValueDict;
         static void Main(string[] args)
         {
             Console.WriteLine("Multi-Value Dictionary.");
@@ -13,6 +13,7 @@ namespace MultivaluedDictionary
             Console.WriteLine();
             try
             {
+                multiValueDict = new MultiValueDictionary();
                 HandleInput();
             }
             catch (Exception ex)
