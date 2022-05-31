@@ -25,4 +25,6 @@ Commands available
 
 #ITEMS: Returns all keys in the dictionary and all of their members. Returns nothing if there are none. Order is not guaranteed.
 
+#BATCHPROCESS: Send all the commands you want to execute in a text file as new lines, Executes all the commnads in the file.
+
 
