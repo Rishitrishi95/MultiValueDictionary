@@ -1,6 +1,6 @@
 # MultiValueDictionary
 
-Multi Value Dictionary is a dictionary that can store multiple values per key in the form of a list.
+Multi Value Dictionary is a dictionary that can store multiple values per key in the form of a list. Both key and values are case insensitive.
 
 Multivalue Dictionary is a console application.
 
