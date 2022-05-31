@@ -1,0 +1,15 @@
+/Users/rishitreddymuthyala/Projects/MultivaluedDictionary/MultivaluedDictionary/bin/Debug/net6.0/MultivaluedDictionary
+/Users/rishitreddymuthyala/Projects/MultivaluedDictionary/MultivaluedDictionary/bin/Debug/net6.0/MultivaluedDictionary.deps.json
+/Users/rishitreddymuthyala/Projects/MultivaluedDictionary/MultivaluedDictionary/bin/Debug/net6.0/MultivaluedDictionary.runtimeconfig.json
+/Users/rishitreddymuthyala/Projects/MultivaluedDictionary/MultivaluedDictionary/bin/Debug/net6.0/MultivaluedDictionary.dll
+/Users/rishitreddymuthyala/Projects/MultivaluedDictionary/MultivaluedDictionary/bin/Debug/net6.0/MultivaluedDictionary.pdb
+/Users/rishitreddymuthyala/Projects/MultivaluedDictionary/MultivaluedDictionary/obj/Debug/net6.0/MultivaluedDictionary.csproj.AssemblyReference.cache
+/Users/rishitreddymuthyala/Projects/MultivaluedDictionary/MultivaluedDictionary/obj/Debug/net6.0/MultivaluedDictionary.GeneratedMSBuildEditorConfig.editorconfig
+/Users/rishitreddymuthyala/Projects/MultivaluedDictionary/MultivaluedDictionary/obj/Debug/net6.0/MultivaluedDictionary.AssemblyInfoInputs.cache
+/Users/rishitreddymuthyala/Projects/MultivaluedDictionary/MultivaluedDictionary/obj/Debug/net6.0/MultivaluedDictionary.AssemblyInfo.cs
+/Users/rishitreddymuthyala/Projects/MultivaluedDictionary/MultivaluedDictionary/obj/Debug/net6.0/MultivaluedDictionary.csproj.CoreCompileInputs.cache
+/Users/rishitreddymuthyala/Projects/MultivaluedDictionary/MultivaluedDictionary/obj/Debug/net6.0/MultivaluedDictionary.dll
+/Users/rishitreddymuthyala/Projects/MultivaluedDictionary/MultivaluedDictionary/obj/Debug/net6.0/refint/MultivaluedDictionary.dll
+/Users/rishitreddymuthyala/Projects/MultivaluedDictionary/MultivaluedDictionary/obj/Debug/net6.0/MultivaluedDictionary.pdb
+/Users/rishitreddymuthyala/Projects/MultivaluedDictionary/MultivaluedDictionary/obj/Debug/net6.0/MultivaluedDictionary.genruntimeconfig.cache
+/Users/rishitreddymuthyala/Projects/MultivaluedDictionary/MultivaluedDictionary/obj/Debug/net6.0/ref/MultivaluedDictionary.dll
