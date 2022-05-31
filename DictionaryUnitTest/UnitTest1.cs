@@ -89,46 +89,32 @@ public class Tests
         Assert.That(response, Is.EqualTo($"Key {key} doesn't exist, Removal unsuccessfull\n"));
     }
 
-    //[Test]
-    //public void TestMemberExists()
-    //{
-    //    string key = "foo";
-    //    string value = "bar";
-    //    multiValueDict.Add("foo", "bar");
-    //    var response = multiValueDict.Add("foo", "bar");
-    //    Assert.That($"Error, Member {value} already exists in Key {key}", Is.EqualTo(response));
-    //}
+    [Test]
+    public void TestMemberExists()
+    {
+        multiValueDict.Add("foo", "bar");
+        var response = multiValueDict.MemberExists("foo", "BAR");
+        Assert.That(response, Is.EqualTo(true));
+        response = multiValueDict.MemberExists("foo", "bar");
+        Assert.That(response, Is.EqualTo(true));
+        response = multiValueDict.MemberExists("foo", "baz");
+        Assert.That(response, Is.EqualTo(false));
 
-    //[Test]
-    //public void TestMemberDoesnNotExists()
-    //{
-    //    string key = "foo";
-    //    string value = "bar";
-    //    multiValueDict.Add("foo", "bar");
-    //    var response = multiValueDict.Add("foo", "bar");
-    //    Assert.That($"Error, Member {value} already exists in Key {key}", Is.EqualTo(response));
-    //}
+        response = multiValueDict.MemberExists("zoo", "bar");
+        Assert.That(response, Is.EqualTo(false));
+    }
 
-    //[Test]
-    //public void TestKeyExists()
-    //{
-    //    string key = "foo";
-    //    string value = "bar";
-    //    multiValueDict.Add("foo", "bar");
-    //    var response = multiValueDict.Add("foo", "bar");
-    //    Assert.That($"Error, Member {value} already exists in Key {key}", Is.EqualTo(response));
-    //}
-
-    //[Test]
-    //public void TestKeyDoesnNotExists()
-    //{
-    //    string key = "foo";
-    //    string value = "bar";
-    //    multiValueDict.Add("foo", "bar");
-    //    var response = multiValueDict.Add("foo", "bar");
-    //    Assert.That($"Error, Member {value} already exists in Key {key}", Is.EqualTo(response));
-    //}
-
+    [Test]
+    public void TestKeyExists()
+    {
+        multiValueDict.Add("foo", "bar");
+        var response = multiValueDict.KeyExists("foo");
+        Assert.That(response, Is.EqualTo(true));
+        response = multiValueDict.KeyExists("FOO");
+        Assert.That(response, Is.EqualTo(true));
+        response = multiValueDict.KeyExists("zoo");
+        Assert.That(response, Is.EqualTo(false));
+    }
 
 
     [Test]
@@ -153,6 +139,38 @@ public class Tests
             Assert.That(response,Is.EqualTo(0));
         }
     }
+
+    [Test]
+    public void TestMembers()
+    {
+        multiValueDict.Add("foo", "bar");
+        multiValueDict.Add("foo", "bang");
+        var response = multiValueDict.Members("foo");
+        Assert.That(response, Is.EqualTo($"1) bar\n2) bang\n"));
+    }
+
+    [Test]
+    public void TestAllMembers()
+    {
+        multiValueDict.Add("foo", "bar");
+        multiValueDict.Add("foo", "bang");
+        multiValueDict.Add("bar", "zoo");
+        multiValueDict.Add("bar", "soda");
+        var response = multiValueDict.AllMembers();
+        Assert.That(response, Is.EqualTo($"1) bar\n2) bang\n3) zoo\n4) soda\n"));
+    }
+
+    [Test]
+    public void TestList()
+    {
+        multiValueDict.Add("foo", "bar");
+        multiValueDict.Add("foo", "bang");
+        multiValueDict.Add("bar", "zoo");
+        multiValueDict.Add("bar", "soda");
+        var response = multiValueDict.PrintAllItems();
+        Assert.That(response, Is.EqualTo($"1) foo: bar\n2) foo: bang\n3) bar: zoo\n4) bar: soda\n"));
+    }
+
 
 
 }
