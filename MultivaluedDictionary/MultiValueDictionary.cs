@@ -10,7 +10,8 @@ namespace MultivaluedDictionary
         /*Constructor to initialize dictionary object*/
         public MultiValueDictionary()
         {
-            multiValueDictionaryObject = new Dictionary<string, List<string>>();
+            var comparer = StringComparer.OrdinalIgnoreCase;
+            multiValueDictionaryObject = new Dictionary<string, List<string>>(comparer);
         }
 
 
@@ -22,20 +23,20 @@ namespace MultivaluedDictionary
 
                 if (multiValueDictionaryObject[key].Contains(value))
                 {
-                    return $"Error, Member {value} already exists in Key {key}";
+                    return $"Error, Member {value} already exists in Key {key}\n";
                 }
                 else
                 {
                     multiValueDictionaryObject[key].Add(value);
 
-                    return $"Successfully added {value} to {key}";
+                    return $"Successfully added {value} to {key}\n";
                 }
             }
             else
             {
                 multiValueDictionaryObject.Add(key,new List<string>() { value });
 
-                return $"Successfully added {value} to {key}";
+                return $"Successfully added {value} to {key}\n";
             }
         }
 
@@ -50,16 +51,16 @@ namespace MultivaluedDictionary
                     {
                         multiValueDictionaryObject.Remove(key);
                     }
-                    return $"Successfully removed Member - {value} from Key - {key}";
+                    return $"Successfully removed Member - {value} from Key - {key}\n";
                 }
                 else
                 {
-                    return $"Member - {value} doesn't exist, Removal unsuccessfull";
+                    return $"Member - {value} doesn't exist, Removal unsuccessfull\n";
                 }
             }
             else
             {
-               return $"Key - {key} doesn't exist, Removal unsuccessfull";
+               return $"Key - {key} doesn't exist, Removal unsuccessfull\n";
             }
         }
 
@@ -68,11 +69,11 @@ namespace MultivaluedDictionary
         {
             if(multiValueDictionaryObject.Remove(key))
             {
-                return $"Successfully removed Key - {key}";
+                return $"Successfully removed Key - {key}\n";
             }
             else
             {
-                return $"Key {key} doesn't exist, Removal unsuccessfull";
+                return $"Key {key} doesn't exist, Removal unsuccessfull\n";
             }
         }
 
@@ -120,7 +121,7 @@ namespace MultivaluedDictionary
             }
             else
             {
-                return ") Empty Set";
+                return ") Empty Set\n";
             }
         }
 
@@ -139,7 +140,7 @@ namespace MultivaluedDictionary
             }
             else
             {
-                return $"Key {key} doesn't exist";
+                return $"Key {key} doesn't exist\n";
             }
 
         }
@@ -163,7 +164,7 @@ namespace MultivaluedDictionary
             }
             else
             {
-                return "No key value pair exists in dictionary";
+                return "No key value pair exists in dictionary\n";
             }
         }
 
@@ -186,7 +187,7 @@ namespace MultivaluedDictionary
             }
             else
             {
-                return "No member exists";
+                return "No member exists\n";
             }
         }
 

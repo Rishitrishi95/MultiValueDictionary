@@ -26,7 +26,8 @@ namespace MultivaluedDictionary
             while (true)
             {
                 Console.Write(">");
-                string? userInput = Console.ReadLine();
+                string? userInput = Console.ReadLine()?.Trim();
+
                 if (!String.IsNullOrWhiteSpace(userInput))
                 {
                     try
@@ -36,7 +37,14 @@ namespace MultivaluedDictionary
                         switch (cmdItems[0].ToUpper())
                         {
                             case "ADD":
-                                Console.WriteLine(multiValueDict.Add(cmdItems[1], cmdItems[2]));
+                                if(cmdItems.Count()==3)
+                                {
+                                    Console.WriteLine(multiValueDict.Add(cmdItems[1], cmdItems[2]));
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Invalid Command.");
+                                }
                                 break;
                             case "KEYS":
                                 Console.WriteLine(multiValueDict.Keys());
@@ -45,23 +53,58 @@ namespace MultivaluedDictionary
                                 Console.WriteLine(multiValueDict.AllMembers());
                                 break;
                             case "MEMBERS":
-                                Console.WriteLine(multiValueDict.Members(cmdItems[1]));
+                                if (cmdItems.Count() == 2)
+                                {
+                                    Console.WriteLine(multiValueDict.Members(cmdItems[1]));
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Invalid Command.");
+                                }
                                 break;
                             case "REMOVE":
-                                Console.WriteLine(multiValueDict.Remove(cmdItems[1], cmdItems[2]));
+                                if (cmdItems.Count() == 3)
+                                {
+                                    Console.WriteLine(multiValueDict.Remove(cmdItems[1], cmdItems[2]));
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Invalid Command.");
+                                }
                                 break;
                             case "REMOVEALL":
-                                Console.WriteLine(multiValueDict.Remove(cmdItems[1]));
+                                if (cmdItems.Count() == 2)
+                                {
+                                    Console.WriteLine(multiValueDict.Remove(cmdItems[1]));
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Invalid Command.");
+                                }
                                 break;
                             case "CLEAR":
                                 multiValueDict.Clear();
                                 Console.WriteLine("Cleared.");
                                 break;
                             case "KEYEXISTS":
-                                Console.WriteLine(multiValueDict.KeyExists(cmdItems[1]));
+                                if (cmdItems.Count() == 2)
+                                {
+                                    Console.WriteLine(multiValueDict.KeyExists(cmdItems[1]));
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Invalid Command.");
+                                }
                                 break;
                             case "MEMBEREXISTS":
-                                Console.WriteLine(multiValueDict.MemberExists(cmdItems[1],cmdItems[2]));
+                                if (cmdItems.Count() == 3)
+                                {
+                                    Console.WriteLine(multiValueDict.MemberExists(cmdItems[1], cmdItems[2]));
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Invalid Command.");
+                                }
                                 break;
                             case "ITEMS":
                                 Console.WriteLine(multiValueDict.PrintAllItems());
@@ -80,8 +123,6 @@ namespace MultivaluedDictionary
                         //throw;
                     }
                 }
-
-
             }
 
         }
